@@ -1,0 +1,351 @@
+body,
+html {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden; /* Prevent horizontal scrolling at the body level */
+}
+
+.feed-page {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 20px;
+	height: 100vh; /* Full viewport height */
+	overflow-y: auto; /* Enable vertical scrolling */
+	overflow-x: hidden; /* Prevent horizontal scrolling */
+	box-sizing: border-box;
+	width: 100%;
+	padding-bottom: 40px; /* Extra space at the bottom for scrolling */
+}
+
+.dropdown-container {
+	width: 100%;
+	max-width: 500px;
+	box-sizing: border-box;
+	padding: 0 20px; /* Padding to prevent overflow */
+	margin-bottom: 20px; /* Space between dropdown and upload section */
+	display: flex;
+	justify-content: center; /* Center horizontally */
+}
+
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+.menu-button,
+.menu-item {
+	border: 2px solid #00bfff; /* Bright blue border for dropdown and logout */
+	padding: 8px 16px;
+	border-radius: 4px;
+	background-color: #ff0ea2;
+	color: white;
+	cursor: pointer;
+	text-align: center;
+	transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.delete-account {
+	border: 2px solid rgb(0, 234, 255); /* Orange border for delete account */
+	padding: 8px 16px;
+	border-radius: 4px;
+	background-color: #ff0ea2; /* Orange background */
+	color: white;
+	cursor: pointer;
+	text-align: center;
+	transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.logout {
+	border: 2px solid rgb(0, 255, 0); /* Green border for logout */
+	background-color: rgb(0, 255, 0) !important; /* Green background */
+}
+
+.dropdown-toggle:hover,
+.delete-account:hover,
+.logout:hover {
+	background-color: #fff;
+	color: #ff0ea2;
+}
+
+.delete-account:hover {
+	background-color: #ffcc80; /* Lighter orange on hover */
+	color: #fff;
+}
+
+.logout:hover {
+	background-color: #80ff80 !important; /* Lighter green on hover */
+	color: #fff;
+}
+
+.dropdown-menu {
+	display: none;
+	position: absolute;
+	background-color: #fff;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	top: 100%;
+	right: 0;
+	z-index: 1;
+	padding: 5px 0; /* Added padding to the dropdown */
+}
+
+.dropdown:hover .dropdown-menu {
+	display: block;
+}
+
+.dropdown-menu button {
+	background: linear-gradient(to bottom, #ffffff, #d8d8d8); /* Gradient from light to dark */
+	border: 2px solid #00bfff; /* Bright blue border */
+	padding: 5px 10px;
+	text-align: center;
+	width: 100%; /* Full width of the dropdown */
+	cursor: pointer;
+	color: #b1257b;
+	border-radius: 0; /* No border radius to create a unified dropdown look */
+	display: block; /* Ensure buttons are block-level elements */
+	box-sizing: border-box;
+	margin: 0; /* Remove margin between buttons */
+}
+
+/* Add space between dropdown items */
+.dropdown-menu button + button {
+	margin-top: 5px; /* Adjust the value as needed */
+}
+
+.dropdown-menu button + button {
+	border-top: 1px solid #ddd;
+}
+
+.dropdown-menu button:hover {
+	background-color: #f0f0f0;
+}
+
+.upload-section {
+	margin-bottom: 20px;
+	width: 100%;
+	max-width: 500px;
+	box-sizing: border-box;
+	padding: 0 20px; /* Padding to prevent overflow */
+}
+
+.upload-section button {
+	border: 2px solid #00bfff; /* Bright blue border */
+	padding: 8px 16px;
+	border-radius: 4px;
+	background-color: #ff0ea2;
+	color: white;
+	cursor: pointer;
+	text-align: center;
+	transition: background-color 0.3s ease, color 0.3s ease;
+	margin-top: 10px;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.upload-section button:hover {
+	background-color: #f971c5;
+}
+
+.photo-list {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.photo-card {
+	width: 100%;
+	max-width: 500px; /* Control the size of the photo card */
+	margin-bottom: 20px;
+	border: 3px solid #ff00e6; /* Blue stroke around the photo card */
+	border-radius: 8px;
+	padding: 10px;
+	background-color: rgba(0, 0, 0, 0.7);
+	box-shadow: inset 0 0 13px rgb(255, 255, 255),
+		/* Inner glow effect */ 0 2px 8px rgba(0, 0, 0, 0.9);
+	text-align: center;
+	box-sizing: border-box;
+	overflow-wrap: break-word; /* Ensure long words break and do not overflow */
+	word-wrap: break-word; /* Support for older browsers */
+}
+
+.photo-card p {
+	margin: 1px 0;
+	color: #2bff00;
+	font-size: 24px;
+	line-height: 1.5;
+	white-space: pre-wrap; /* Preserve whitespace and wrap text as needed */
+	word-break: break-word; /* Break long words to prevent overflow */
+}
+
+.photo-card img {
+	width: 100%; /* Image fills the width of the container */
+	height: auto; /* Maintain aspect ratio */
+	border-radius: 8px; /* Rounded corners */
+	filter: drop-shadow(0px 0px 10px rgb(0, 255, 234)); /* Illusion of a border around the shape */
+}
+
+.comments-section {
+	margin-top: 20px;
+	text-align: left;
+	width: 100%;
+	max-width: 500px;
+	box-sizing: border-box;
+}
+
+.comment-form {
+	display: flex;
+	flex-direction: column; /* Stack elements vertically */
+	align-items: center; /* Center horizontally */
+	width: 100%;
+	max-width: 500px; /* Adjust width as needed */
+	box-sizing: border-box;
+	margin-left: auto; /* Center the form within its container */
+	margin-right: auto; /* Center the form within its container */
+}
+
+.comment-form input {
+	width: 100%;
+	padding: 5px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	box-sizing: border-box;
+	margin-bottom: 5px; /* Space between input and button */
+}
+
+.comment-form button {
+	padding: 5px 10px; /* Adjust the button padding for a smaller button */
+	border: 2px solid #00bfff;
+	background-color: #ff0ea2;
+	color: #fff;
+	border-radius: 4px;
+	cursor: pointer;
+	font-size: 14px; /* Smaller font size */
+	width: 100%; /* Full width */
+	box-sizing: border-box;
+}
+
+.comment-form button:hover {
+	background-color: #f971c5;
+}
+
+.comment {
+	background-color: #f9f9f9;
+	padding: 8px;
+	border-radius: 4px;
+	margin-bottom: 5px;
+	border: 2px solid #00bfff; /* Blue stroke around the comment box */
+	word-wrap: break-word; /* Ensure long words break and do not overflow */
+	overflow-wrap: break-word; /* Ensure text breaks to fit container */
+}
+
+.photo-header {
+	display: flex;
+	align-items: center;
+	flex-wrap: nowrap;
+}
+.avatar-container {
+	width: 50px;
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+	overflow: hidden;
+}
+
+.avatar-container {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%; /* Makes the avatar circular */
+	overflow: hidden; /* Ensures the image stays within the circular container */
+	margin-right: 10px; /* Space between avatar and username */
+	display: flex; /* Center the image inside */
+	justify-content: center;
+	align-items: center;
+	border: 3px solid rgb(5, 255, 251); /* Pink border around the avatar */
+	box-shadow: 0 0 10px rgba(5, 255, 251, 0.7), 0 0 5px rgba(5, 255, 251, 0.5);
+	flex-shrink: 0; /* Prevents the avatar from shrinking or stretching */
+	object-fit: cover; /* Ensures that the image covers the entire container without distortion */
+	overflow: hidden;
+}
+
+.avatar-image {
+	width: 100%; /* Ensures the image fits the container */
+	height: 100%;
+	object-fit: cover; /* Makes the image cover the container without distortion */
+	border-radius: 50%; /* Ensures the image inside the container is also circular */
+}
+
+.username {
+	white-space: nowrap; /* Prevent the username from wrapping */
+	font-size: 25px;
+	color: #2bff00;
+}
+
+.avatar-popup {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 300px;
+	padding: 20px;
+	background-color: #fff;
+	border-radius: 8px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+	z-index: 1000;
+	box-sizing: border-box;
+}
+
+.avatar-popup input[type='file'] {
+	margin-bottom: 10px;
+}
+
+.avatar-popup button {
+	padding: 8px 16px;
+	border: 2px solid #00bfff;
+	background-color: #ff0ea2;
+	color: white;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: background-color 0.3s ease, color 0.3s ease;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.avatar-popup button:hover {
+	background-color: #f971c5;
+}
+
+.avatar-popup-close {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	background: none;
+	border: none;
+	font-size: 16px;
+	cursor: pointer;
+}
+
+.avatar-popup-close:hover {
+	color: red;
+}
+
+@media (max-width: 768px) {
+	.photo-card img {
+		max-width: 100%; /* Adjust to ensure the image doesn't exceed screen size */
+	}
+	.avatar-container {
+		width: 40px;
+		height: 40px;
+	}
+
+	.avatar {
+		width: 40px;
+		height: 40px;
+	}
+}
