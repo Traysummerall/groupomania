@@ -1,0 +1,88 @@
+/* Ensure the background covers the whole viewport */
+body {
+	margin: 0;
+	padding: 0;
+	background-image: url('/public/background.png'); /* Update with the correct path */
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 100vh; /* Full viewport height */
+}
+
+/* Container for the login page */
+.Login {
+	width: 100%;
+	height: 100%; /* Full height of the body */
+	display: flex;
+	justify-content: center; /* Center horizontally */
+	align-items: center; /* Center vertically */
+}
+
+/* Container for the login form */
+.Login > div {
+	width: 100%;
+	max-width: 400px;
+	padding: 1rem;
+	border: 1px solid #ccc;
+	border-radius: 8px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	background-color: #fff; /* Solid background to make the form stand out */
+}
+
+/* Form box styling */
+form {
+	display: flex;
+	flex-direction: column;
+	padding: 1rem; /* Ensure padding inside the box */
+}
+
+/* Heading styling */
+h2 {
+	text-align: center;
+	margin-bottom: 1rem;
+}
+
+/* Input field container */
+label {
+	display: block;
+	margin-bottom: 0.5rem;
+}
+
+input {
+	width: 100%;
+	padding: 0.5rem;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	box-sizing: border-box; /* Ensures padding is included in width */
+}
+
+/* Button styling */
+button {
+	width: 100%;
+	padding: 0.5rem;
+	border: none;
+	border-radius: 4px;
+	background-color: #ff0ea2;
+	color: #fff;
+	font-size: 1rem;
+	cursor: pointer;
+}
+
+button:hover {
+	background-color: #f971c5;
+}
+
+/* Footer text styling */
+p {
+	text-align: center;
+	margin-top: 1rem;
+}
+
+a {
+	color: #ff0ea2;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
