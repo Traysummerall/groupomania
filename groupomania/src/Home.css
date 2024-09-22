@@ -1,0 +1,40 @@
+/* Home.css */
+.home-container {
+	background-image: url('/public/background.png'); /* Correctly points to the public directory */
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.title-image {
+	margin-bottom: 2rem;
+	width: 50%; /* Adjust this value as needed */
+	min-width: 290px; /* Ensure the image doesn't get smaller than 150px */
+	height: auto; /* Maintain aspect ratio */
+}
+
+.link-box {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	padding: 1rem;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	background: rgba(255, 255, 255, 0.8);
+}
+
+.link-box a {
+	text-decoration: none;
+	color: #ff0ea2;
+	font-size: xx-large;
+}
+
+.link-box a:hover {
+	text-decoration: underline;
+}
